@@ -1,0 +1,25 @@
+{
+  "name": "iou",
+  "version": "1.0.0",
+  "description": "A server side JavaScript project for a university course. The application will be able to track the dirty finances of a friend group.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Goldan32/IOU.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Goldan32/IOU/issues"
+  },
+  "homepage": "https://github.com/Goldan32/IOU#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
