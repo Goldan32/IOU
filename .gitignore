@@ -1,2 +1,3 @@
 *.pdf
 docs/template/*
+node_modules/*
