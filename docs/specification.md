@@ -7,7 +7,7 @@ date: "INSERT_DATE_HERE"
 # IOU: A Group Finance Tracking Application
 
 ## Short description
-This application aims to help a group of friends manage their common finances. For example, if someone buys lunch for everyone, than that expenditure can be written up for that person. The cost then will be evenly distributed among the peaple at that gathering, which makes paying back easier and less maths-heavy.
+This application aims to help a group of friends manage their common finances. For example, if someone buys lunch for everyone, than that expenditure can be written up for that person. The cost then will be evenly distributed among the people at that gathering, which makes paying back easier and less math-heavy.
 
 
 This description will only describe a minimal version of the application. Expanding with other functions will be possible.
@@ -40,9 +40,9 @@ Features:
 
 ## Usage
 
-An average usecase for this app will follow these steps:
+An average use-case for this app will follow these steps:
 
-| Happens in real life | Happens in the application | Maths |
+| Happens in real life | Happens in the application | Math |
 | ----------- | ----------- | ----------- |
 | The Person **A**, **B** and **C** organizes a cookout | An event is created, with Persons **A**, **B** and **C** ||
 | Person **A** buys the food for **x** amount | A loan is added with Person **A** attached for **x** amount | Persons **B** and **C** owe **x/3** amount each, while **A** has a balance of **2x/3** |
