@@ -34,39 +34,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1>Events</h1>
+                    <h1>New loan</h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-8">
+                <div class="col-2"></div>
+                <div class="col-8" style="text-align: left">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Description of the loan</label>
+                            <input type="text" class="form-control" id="name" name="loan description">
+                        </div>
+                        <div class="form-group">
+                            <label for="cost">Loan value</label>
+                            <input type="text" class="form-control" id="cost" name="loan cost">
+                        </div>
+                        <div class="form-group">
+                            <label for="person">Who financed this loan</label>
+                            <select class="form-control" id="person">
+                                <option>Christian</option>
+                                <option>Alexander</option>
+                                <option>Thomas</option>
+                                <option>Daniel</option>
+                                <option>Samuel</option>
+                            </select>
+                        </div>
+                        <a class="btn btn-primary" href="/single_event.html">Create loan</a>
+                        <a class="btn btn-link" href="/single_event.html">Cancel</a>
+                    </form>
                 </div>
-                <div class="col-4">
-                    <a class="btn btn-primary btn-block" role="button" href="/create_event.html">Create new event</a>
-                </div>
-            </div>
-            <div class="row" style="text-align: center">
-                <div class="col-12">
-                    <table class="table table-striped table-bordered">
-                        <tr>
-                            <th>Title</th>
-                            <th>Attendance</th>
-                            <th>View</th>
-                            <th>Delete</th>
-                        </tr>
-                        <tr>
-                            <td>A cold one with the Bois</td>
-                            <td>5</td>
-                            <td><a href="/single_event.html"><i class="fa fa-eye" title="View"></i> </a></td>
-                            <td><a href="#"><i class="fa fa-trash" title="Delete" style="color: red"></i> </a></td>
-                        </tr>
-                        <tr>
-                            <td>Board games</td>
-                            <td>3</td>
-                            <td><a href="/single_event.html"><i class="fa fa-eye" title="View"></i> </a></td>
-                            <td><a href="#"><i class="fa fa-trash" title="Delete" style="color: red"></i> </a></td>
-                        </tr>
-                    </table>
-                </div>
+                <div class="col-2"></div>
             </div>
         </div>
 <!-- Edit until here -->
