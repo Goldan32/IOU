@@ -1,0 +1,62 @@
+Routing
+
+GET / - index.html
+
+GET /event/list - events.html
+GET,POST /event/new - create_event.html
+GET /event/view/:eventid - single_event.html
+GET,POST /event/edit/:eventid - rename_event.html
+GET /event/del/:eventid - 
+
+GET /people/list - people.html
+GET /people/profile/:personid - profile.html
+GET,POST /people/new - create_person.html and rename_person.html
+GET /people/del/:personid - 
+
+GET,POST /loan/new - new_loan.html
+
+GET /
+    renderMW(index.html)
+
+GET /event/list
+    getEventListMW
+    renderMW
+
+GET, POST /event/new
+    createEventMW
+    renderMW
+
+GET /event/view/:eventid
+    getEventMW
+    getEventPeopleMW
+    getEventLoansMW
+    renderMW
+
+GET, POST /event/edit/:eventid
+    renameEventMW
+    renderMW
+
+GET /event/ded/:eventid
+    getEventMW
+    delEventMW
+
+GET /people/list
+    getPeopleMW
+    renderMW
+
+GET /people/profile/:personid
+    getPersonMW
+    renderMW
+
+GET, POST /people/new
+    getPersonMW
+    savePersonMW (both editing and creating)
+    renderMW (fill in forms when editing)
+
+GET /people/del/:personid
+    getPersonMW
+    delPersonMW
+
+GET, POST /loan/new
+    saveLoanMW
+    renderMW
