@@ -36,7 +36,7 @@ GET, POST /event/edit/:eventid
     renameEventMW
     renderMW
 
-GET /event/ded/:eventid
+GET /event/del/:eventid
     getEventMW
     delEventMW
 
@@ -60,3 +60,22 @@ GET /people/del/:personid
 GET, POST /loan/new
     saveLoanMW
     renderMW
+
+POST /event/add/:personid
+    addEventPersonMW
+
+
+MiddleWares:
+renderMW
+getEventListMW
+createEventMW
+getEventMW
+getEventPeopleMW
+getEventLoansMW
+renameEventMW
+delEventMW
+getPeopleMW
+savePersonMW
+delPersonMW
+saveLoanMW
+addEventPersonMW
