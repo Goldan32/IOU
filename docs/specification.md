@@ -1,6 +1,6 @@
 ---
 title: "IOU: Specification (Course: VITMAV42, Server Side Javascript)"
-author: [Daniel Arany, A65BYS]
+author: [Daniel Arany, A65BYS, https://github.com/Goldan32/IOU]
 date: "INSERT_DATE_HERE"
 ...
 
