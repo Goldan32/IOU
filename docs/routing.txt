@@ -49,7 +49,6 @@ GET /people/profile/:personid
     renderMW
 
 GET, POST /people/new
-    getPersonMW
     savePersonMW (both editing and creating)
     renderMW (fill in forms when editing)
 
