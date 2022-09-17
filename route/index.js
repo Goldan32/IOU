@@ -1,3 +1,4 @@
+// Generate the first few lines based on filenames
 // for p in $(ls -d */); do for f in $(ls $p); do echo "const $f = require(../middleware/${p}${f});"; done; done;
 
 const addEventPersonMW = require("../middleware/event/addEventPersonMW");
@@ -12,6 +13,8 @@ const saveLoanMW = require("../middleware/loan/saveLoanMW");
 const delPersonMW = require("../middleware/people/delPersonMW");
 const getPeopleMW = require("../middleware/people/getPeopleMW");
 const savePersonMW = require("../middleware/people/savePersonMW");
+const getPersonMW = require("../middleware/people/getPersonMW");
+const renderMW = require("../middleware/renderMW");
 
 module.exports = (app) => {
     const objRepo = {};
