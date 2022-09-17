@@ -1,0 +1,37 @@
+<%- include('header') -%>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>New loan</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8" style="text-align: left">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Description of the loan</label>
+                            <input type="text" class="form-control" id="name" name="loan description">
+                        </div>
+                        <div class="form-group">
+                            <label for="cost">Loan value</label>
+                            <input type="text" class="form-control" id="cost" name="loan cost">
+                        </div>
+                        <div class="form-group">
+                            <label for="person">Who financed this loan</label>
+                            <select class="form-control" id="person">
+                                <option>Christian</option>
+                                <option>Alexander</option>
+                                <option>Thomas</option>
+                                <option>Daniel</option>
+                                <option>Samuel</option>
+                            </select>
+                        </div>
+                        <a class="btn btn-primary" href="/single_event.html">Create loan</a>
+                        <a class="btn btn-link" href="/single_event.html">Cancel</a>
+                    </form>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+<%- include('footer') -%>
