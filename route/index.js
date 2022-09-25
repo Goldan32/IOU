@@ -16,12 +16,8 @@ const savePersonMW = require("../middleware/people/savePersonMW");
 const getPersonMW = require("../middleware/people/getPersonMW");
 const renderMW = require("../middleware/renderMW");
 
-module.exports = (app) => {
+module.exports = function(app) {
     const objRepo = {};
-
-    app.use("/",
-        renderMW(objRepo, 'index')
-    );
 
     app.get('/event/new',
         createEventMW(objRepo),
@@ -77,5 +73,9 @@ module.exports = (app) => {
     app.use('/loan/new',
         saveLoanMW(objRepo),
         renderMW(objRepo, 'new_loan')
+    );
+
+    app.use("/",
+        renderMW(objRepo, 'index')
     );
 }

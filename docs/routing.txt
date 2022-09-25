@@ -78,3 +78,8 @@ savePersonMW
 delPersonMW
 saveLoanMW
 addEventPersonMW
+
+stuff to define
+
+<%= event._id %>
+<%= person._id %>
