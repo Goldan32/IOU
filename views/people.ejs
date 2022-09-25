@@ -9,7 +9,7 @@
                 <div class="col-8">
                 </div>
                 <div class="col-4">
-                    <a class="btn btn-primary btn-block" role="button" href="/create_person.html">Add new person</a>
+                    <a class="btn btn-primary btn-block" role="button" href="/people/new">Add new person</a>
                 </div>
             </div>
             <div class="row" style="text-align: center">
@@ -24,13 +24,13 @@
                         <tr>
                             <td>Daniel</td>
                             <td>5000</td>
-                            <td><a href="/profile.html"><i class="fa fa-eye" title="View"></i> </a></td>
+                            <td><a href="/people/profile/<%= person._id %>"><i class="fa fa-eye" title="View"></i> </a></td>
                             <td><a href="#"><i class="fa fa-trash" title="Delete" style="color: red"></i> </a></td>
                         </tr>
                         <tr>
                             <td>Samuel</td>
                             <td>-1000</td>
-                            <td><a href="/profile.html"><i class="fa fa-eye" title="View"></i> </a></td>
+                            <td><a href="/people/profile/<%= person._id %>"><i class="fa fa-eye" title="View"></i> </a></td>
                             <td><a href="#"><i class="fa fa-trash" title="Delete" style="color: red"></i> </a></td>
                         </tr>
                     </table>

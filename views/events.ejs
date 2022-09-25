@@ -9,7 +9,7 @@
                 <div class="col-8">
                 </div>
                 <div class="col-4">
-                    <a class="btn btn-primary btn-block" role="button" href="/create_event.html">Create new event</a>
+                    <a class="btn btn-primary btn-block" role="button" href="/event/new">Create new event</a>
                 </div>
             </div>
             <div class="row" style="text-align: center">
@@ -24,13 +24,13 @@
                         <tr>
                             <td>A cold one with the Bois</td>
                             <td>5</td>
-                            <td><a href="/single_event.html"><i class="fa fa-eye" title="View"></i> </a></td>
+                            <td><a href="/event/view/<%= event._id %>"><i class="fa fa-eye" title="View"></i> </a></td>
                             <td><a href="#"><i class="fa fa-trash" title="Delete" style="color: red"></i> </a></td>
                         </tr>
                         <tr>
                             <td>Board games</td>
                             <td>3</td>
-                            <td><a href="/single_event.html"><i class="fa fa-eye" title="View"></i> </a></td>
+                            <td><a href="/event/view/<%= event._id %>"><i class="fa fa-eye" title="View"></i> </a></td>
                             <td><a href="#"><i class="fa fa-trash" title="Delete" style="color: red"></i> </a></td>
                         </tr>
                     </table>
