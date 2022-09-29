@@ -83,3 +83,7 @@ stuff to define
 
 <%= event._id %>
 <%= person._id %>
+eventList .name .attendance
+people .name .overallBalance
+perosn .eventBalance
+loan .loaner .amount .desc

@@ -20,11 +20,9 @@
                         <div class="form-group">
                             <label for="person">Who financed this loan</label>
                             <select class="form-control" id="person">
-                                <option>Christian</option>
-                                <option>Alexander</option>
-                                <option>Thomas</option>
-                                <option>Daniel</option>
-                                <option>Samuel</option>
+                            <% people.forEach( (person) => { %>
+                                <option><%= person.name %></option>
+                            <% }); %>
                             </select>
                         </div>
                         <a class="btn btn-primary" href="/event/view/<%= event._id %>">Create loan</a>

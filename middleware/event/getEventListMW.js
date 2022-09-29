@@ -5,7 +5,11 @@ const requireOption = require('../requireOption');
 
 module.exports = function (objectrepository) {
     return function (req, res, next) {
-        console.log("In eventlist")
+        let eventList = [
+            {_id:0, name:'A cold one with the bois', attendance:5},
+            {_id:1, name:'Board games', attendance:3}
+        ];
+        res.locals.eventList = eventList;
         next();
     };
 };

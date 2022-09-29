@@ -21,18 +21,14 @@
                             <th>View</th>
                             <th>Delete</th>
                         </tr>
+                        <% eventList.forEach( (event) => { %>
                         <tr>
-                            <td>A cold one with the Bois</td>
-                            <td>5</td>
+                            <td><%= event.name %></td>
+                            <td><%= event.attendance %></td>
                             <td><a href="/event/view/<%= event._id %>"><i class="fa fa-eye" title="View"></i> </a></td>
                             <td><a href="#"><i class="fa fa-trash" title="Delete" style="color: red"></i> </a></td>
                         </tr>
-                        <tr>
-                            <td>Board games</td>
-                            <td>3</td>
-                            <td><a href="/event/view/<%= event._id %>"><i class="fa fa-eye" title="View"></i> </a></td>
-                            <td><a href="#"><i class="fa fa-trash" title="Delete" style="color: red"></i> </a></td>
-                        </tr>
+                        <% }); %>
                     </table>
                 </div>
             </div>
