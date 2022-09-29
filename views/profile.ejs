@@ -21,14 +21,12 @@
                             <th>Event name</th>
                             <th>Balance for the event</th>
                         </tr>
+                        <% eventList.forEach( (event) => { %> 
                         <tr>
-                            <td>A cold one with the Bois</td>
-                            <td>6000</td>
+                            <td><%= event.name %></td>
+                            <td><%= person.eventBalance %></td>
                         </tr>
-                        <tr>
-                            <td>Board games</td>
-                            <td>-1000</td>
-                        </tr>
+                        <% }); %> 
                     </table>
                 </div>
             </div>

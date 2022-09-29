@@ -10,7 +10,7 @@
                 <div class="col-8" style="text-align: center">
                     <form>
                         <div class="form-group">
-                            <label for="name">New name for Daniel</label>
+                            <label for="name">New name for <%= person.name %></label>
                             <input type="text" class="form-control" id="name" name="event name">
                         </div>
                         <a class="btn btn-primary" href="/people/profile/<%= person._id %>">Rename</a>

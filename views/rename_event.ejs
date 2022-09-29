@@ -10,11 +10,11 @@
                 <div class="col-8" style="text-align: center">
                     <form>
                         <div class="form-group">
-                            <label for="name">New name for "A cold one with the Bois"</label>
+                            <label for="name">New name for <%= event.name %></label>
                             <input type="text" class="form-control" id="name" name="event name">
                         </div>
                         <a class="btn btn-primary" href="/event/view/<%= event._id %>">Rename</a>
-                        <a class="btn btn-link" href="/event/view/<%= person._id %>">Cancel</a>
+                        <a class="btn btn-link" href="/event/view/<%= event._id %>">Cancel</a>
                     </form>
                 </div>
                 <div class="col-2"></div>
