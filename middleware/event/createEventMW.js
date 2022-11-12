@@ -5,7 +5,20 @@
 const requireOption = require('../requireOption');
 
 module.exports = function (objectrepository) {
+    const EventModel = requireOption(objectrepository, 'EventModel');
+
+
     return function (req, res, next) {
-        next();
+        if(typeof req.body.eventName === 'undefined'){
+            return next();
+        }
+        // Create new event
+        console.log('Creating new event');
+        res.locals.event = new EventModel();
+        res.locals.event.name = req.body.eventName;
+        res.locals.event.save(err => {
+            if (err) { return next(err);}
+            return res.redirect('/event/list');
+        });
     };
 };
