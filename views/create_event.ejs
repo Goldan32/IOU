@@ -8,12 +8,12 @@
             <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8" style="text-align: center">
-                    <form>
+                    <form method="POST">
                         <div class="form-group">
-                            <label for="name">Give the new event a name</label>
-                            <input type="text" class="form-control" id="name" name="event name">
+                            <label for="eventName">Give the new event a name</label>
+                            <input type="text" class="form-control" id="eventName" name="eventName">
                         </div>
-                        <a class="btn btn-primary" href="/event/list">Create</a>
+                        <button class="btn btn-primary" href="/event/list">Create</button>
                         <a class="btn btn-link" href="/event/list">Cancel</a>
                     </form>
                 </div>

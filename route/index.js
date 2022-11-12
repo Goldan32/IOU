@@ -16,10 +16,18 @@ const savePersonMW = require("../middleware/people/savePersonMW");
 const getPersonMW = require("../middleware/people/getPersonMW");
 const renderMW = require("../middleware/renderMW");
 
-module.exports = function(app) {
-    const objRepo = {};
+const EventModel = require('../models/event');
+const PersonModel = require('../models/person');
+const LoanModel = require('../models/loan');
 
-    app.get('/event/new',
+module.exports = function(app) {
+    const objRepo = {
+        EventModel: EventModel,
+        PersonModel: PersonModel,
+        LoanModel: LoanModel
+    };
+
+    app.use('/event/new',
         createEventMW(objRepo),
         renderMW(objRepo, 'create_event')
     );
@@ -29,19 +37,19 @@ module.exports = function(app) {
         renderMW(objRepo, 'events')
     );
 
-    app.get('/event/view/:eventid',
+    app.use('/event/view/:eventid',
         getEventMW(objRepo),
         getEventPeopleMW(objRepo),
         getEventLoansMW(objRepo),
         renderMW(objRepo, 'single_event')
     );
 
-    app.get('/event/edit/:eventid',
+    app.use('/event/edit/:eventid',
         renameEventMW(objRepo),
         renderMW(objRepo, 'rename_event')
     );
 
-    app.get('/event/del/:eventid',
+    app.use('/event/del/:eventid',
         getEventMW(objRepo),
         delEventMW(objRepo)
     );
@@ -51,7 +59,7 @@ module.exports = function(app) {
         renderMW(objRepo, 'people')
     );
 
-    app.get('/people/profile/:personid',
+    app.use('/people/profile/:personid',
         getPersonMW(objRepo),
         renderMW(objRepo, 'profile')
     );
@@ -61,7 +69,7 @@ module.exports = function(app) {
         renderMW(objRepo, 'rename_person')
     );
 
-    app.get('/people/del/:personid',
+    app.use('/people/del/:personid',
         getPersonMW(objRepo),
         delPersonMW(objRepo)
     );

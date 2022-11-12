@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Goldan32/IOU#readme",
   "dependencies": {
     "@forevolve/bootstrap-dark": "^2.1.1",
+    "body-parser": "^1.20.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "mongoose": "^6.7.0"
