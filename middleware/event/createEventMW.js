@@ -13,9 +13,9 @@ module.exports = function (objectrepository) {
             return next();
         }
         // Create new event
-        console.log('Creating new event');
         res.locals.event = new EventModel();
         res.locals.event.name = req.body.eventName;
+        res.locals.event.attendees = [];
         res.locals.event.save(err => {
             if (err) { return next(err);}
             return res.redirect('/event/list');

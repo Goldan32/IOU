@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8" style="text-align: left">
-                    <form>
+                    <form method="POST">
                         <div class="form-group">
                             <label for="name">Description of the loan</label>
                             <input type="text" class="form-control" id="name" name="loan description">
@@ -25,7 +25,7 @@
                             <% }); %>
                             </select>
                         </div>
-                        <a class="btn btn-primary" href="/event/view/<%= event._id %>">Create loan</a>
+                        <button class="btn btn-primary" href="/event/view/<%= event._id %>">Create loan</button>
                         <a class="btn btn-link" href="/event/view/<%= event._id %>">Cancel</a>
                     </form>
                 </div>

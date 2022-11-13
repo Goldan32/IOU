@@ -2,7 +2,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1>A cold one with the Bois</h1>
+                    <h1><%= event.name %></h1>
                 </div>
             </div>
             <div class="row">
@@ -31,7 +31,7 @@
                             </table>
                         </div>
                     </div>
-                    <form>
+                    <form method="POST">
                         <div class="row">
                             <div class="col-9" style="text-align: center">
                                 <label for="person">Select Person</label>
@@ -41,14 +41,14 @@
                             <div class="col-9" style="text-align: left">
                                 <div class="form-group">
                                     <select class="form-control" id="person">
-                                        <% people.forEach( person => { %> 
+                                        <% outsiders.forEach( person => { %> 
                                         <option><%= person.name %></option>
                                         <% }); %> 
                                     </select>
                                 </div>
                             </div>
                             <div class="col-3" style="text-align: center">
-                                <a class="btn btn-success" href="/event/view/<%= event._id %>">Add</a>
+                                <button class="btn btn-success" href="/event/view/<%= event._id %>">Add</button>
                             </div>
                         </div>
                     </form>

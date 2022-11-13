@@ -4,9 +4,16 @@
 const requireOption = require('../requireOption');
 
 module.exports = function (objectrepository) {
+    const EventModel = requireOption(objectrepository, 'EventModel');
+    const PersonModel = requireOption(objectrepository, 'PersonModel');
     return function (req, res, next) {
-        let event = {_id:0, name:'A cold one with the bois', attendance:5};
-        res.locals.event = event;
-        next();
+        return EventModel.findOne({_id: req.params.eventid}, (err, event) => {
+            if(err) { return next(err); }
+            event.attendance = event.attendees.length;
+
+            res.locals.people = event.attendees;
+            res.locals.event = event;
+            return next();
+        });
     };
 };
