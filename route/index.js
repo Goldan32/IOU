@@ -61,11 +61,18 @@ module.exports = function(app) {
     );
 
     app.use('/people/profile/:personid',
+        getEventListMW(objRepo),
         getPersonMW(objRepo),
         renderMW(objRepo, 'profile')
     );
 
     app.use('/people/new',
+        savePersonMW(objRepo),
+        renderMW(objRepo, 'create_person')
+    );
+
+    app.use('/people/edit/:personid',
+        getPersonMW(objRepo),
         savePersonMW(objRepo),
         renderMW(objRepo, 'rename_person')
     );

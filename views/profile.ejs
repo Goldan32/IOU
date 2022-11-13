@@ -2,16 +2,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1>Daniel</h1>
+                    <h1><%= person.name %> </h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-8">
-                    <h2>Overall balance: 5000</h2>
+                    <h2>Overall balance: <%= person.overallBalance %> </h2>
                 </div>
                 <div class="col-4" style="text-align: right">
-                    <button class="btn btn-primary" role="button" href="/people/new">Rename</button>
-                    <a class="btn btn-danger" role="button" href="#">Delete profile</a>
+                    <a class="btn btn-primary" role="button" href="/people/edit/<%= person._id %>">Rename</a>
+                    <a class="btn btn-danger" role="button" href="/people/del/<%= person._id %>">Delete profile</a>
                 </div>
             </div>
             <div class="row" style="text-align: center">
