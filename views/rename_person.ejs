@@ -8,12 +8,12 @@
             <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8" style="text-align: center">
-                    <form>
+                    <form method="POST">
                         <div class="form-group">
                             <label for="name">New name for <%= person.name %></label>
                             <input type="text" class="form-control" id="name" name="event name">
                         </div>
-                        <a class="btn btn-primary" href="/people/profile/<%= person._id %>">Rename</a>
+                        <button class="btn btn-primary" href="/people/profile/<%= person._id %>">Rename</button>
                         <a class="btn btn-link" href="/people/profile/<%= person._id %>">Cancel</a>
                     </form>
                 </div>

@@ -45,6 +45,7 @@ module.exports = function(app) {
     );
 
     app.use('/event/edit/:eventid',
+        getEventMW(objRepo),
         renameEventMW(objRepo),
         renderMW(objRepo, 'rename_event')
     );

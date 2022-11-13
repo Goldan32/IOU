@@ -9,6 +9,7 @@ module.exports = function (objectrepository) {
     return function (req, res, next) {
         return EventModel.find({}, (err, eventList) => {
             if(err) { return next(err); }
+            eventList.forEach(e => {e.attendance = e.attendees.length});
             res.locals.eventList = eventList;
             return next();
         });
