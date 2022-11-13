@@ -67,11 +67,13 @@ module.exports = function(app) {
     );
 
     app.use('/people/new',
+        getPeopleMW(objRepo),
         savePersonMW(objRepo),
         renderMW(objRepo, 'create_person')
     );
 
     app.use('/people/edit/:personid',
+        getPeopleMW(objRepo),
         getPersonMW(objRepo),
         savePersonMW(objRepo),
         renderMW(objRepo, 'rename_person')

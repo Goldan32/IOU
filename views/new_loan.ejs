@@ -10,16 +10,16 @@
                 <div class="col-8" style="text-align: left">
                     <form method="POST">
                         <div class="form-group">
-                            <label for="name">Description of the loan</label>
-                            <input type="text" class="form-control" id="name" name="loan description">
+                            <label for="loanName">Description of the loan</label>
+                            <input type="text" class="form-control" id="loanName" name="loanName">
                         </div>
                         <div class="form-group">
-                            <label for="cost">Loan value</label>
-                            <input type="text" class="form-control" id="cost" name="loan cost">
+                            <label for="loanCost">Loan value</label>
+                            <input type="text" class="form-control" id="loanCost" name="loanCost">
                         </div>
                         <div class="form-group">
-                            <label for="person">Who financed this loan</label>
-                            <select class="form-control" id="person">
+                            <label for="loanPerson">Who financed this loan</label>
+                            <select class="form-control" id="loanPerson" name="loanPerson">
                             <% people.forEach( (person) => { %>
                                 <option><%= person.name %></option>
                             <% }); %>
