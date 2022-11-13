@@ -4,14 +4,22 @@
 const requireOption = require('../requireOption');
 
 module.exports = function (objectrepository) {
-   return function (req, res, next) {
-        let person = {_id:0, name:'Daniel', overallBalance:7000, eventBalance:5000};
-        res.locals.person = person;
-        let eventList = [
-            {_id:0, name:'A cold one with the bois', eventBalance:5000},
-            {_id:1, name:'Board games', eventBalance:3000},
-        ];
-        res.locals.eventList = eventList;
-        next();
+    const EventModel = requireOption(objectrepository, 'EventModel');
+    const PersonModel = requireOption(objectrepository, 'PersonModel');
+    return function (req, res, next) {
+        return PersonModel.findOne({_id: req.params.personid}, (err, person) => {
+            if (err) { return next(err); }
+            //TODO: Calculate overall balance
+            person.overallBalance = 0;
+            res.locals.person = person;
+            if (typeof res.locals.eventList !== 'undefined') {
+                res.locals.eventList = res.locals.eventList.filter(e => {
+                    e.attendees.includes(person);
+                });
+                //TODO: Calculate balance from loans
+                res.locals.eventList.forEach(e => {e.eventBalance = 0;})
+            }
+            return next();
+        });
     };
 };
