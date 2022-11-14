@@ -4,7 +4,6 @@
  const requireOption = require('../requireOption');
 
  module.exports = function (objectrepository) {
-    const PersonModel = requireOption(objectrepository, 'PersonModel');
     return function (req, res, next) {
         res.locals.insiders.forEach(p => p.eventBalance 
             = res.locals.loanList

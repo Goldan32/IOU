@@ -11,9 +11,9 @@ module.exports = function (objectrepository) {
             if (err) { return next(err); }
             res.locals.person = person;
             if (typeof res.locals.eventList !== 'undefined') {
-                res.locals.eventList = res.locals.eventList.filter(e => {
-                    e.attendees.includes(person);
-                });
+                res.locals.eventList = res.locals.eventList.filter(e => 
+                    e.attendees.map(n => n.toString()).includes(person._id.toString())
+                );
             }
             return next();
         });
