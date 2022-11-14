@@ -5,13 +5,18 @@
 const requireOption = require('../requireOption');
 
 module.exports = function (objectrepository) {
-    //const EventModel = requireOption(objectrepository, 'EventModel');
-    const PersonModel = requireOption(objectrepository, 'PersonModel');
     return function (req, res, next) {
-        return PersonModel.find({_event: {$ne: req.params.eventid}}, (err, outsiders) => {
-            if(err) { return next(err); }
-            res.locals.outsiders = outsiders;
-            return next();
+        res.locals.outsiders = [];
+        res.locals.insiders = []
+        res.locals.people.forEach(p => {
+            if (res.locals.event.attendees
+                .map(x => x.toString())
+                .includes(p._id.toString())) {
+                res.locals.insiders.push(p);
+            } else {
+                res.locals.outsiders.push(p);
+            }
         });
+        return next();
     };
 };

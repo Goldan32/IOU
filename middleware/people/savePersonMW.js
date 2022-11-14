@@ -4,8 +4,7 @@
 const requireOption = require('../requireOption');
 
 module.exports = function (objectrepository) {
-    const PersonModel = requireOption(objectrepository, 'PersonModel')
-
+    const PersonModel = requireOption(objectrepository, 'PersonModel');
     return function (req, res, next) {
         res.locals.alreadyExists = false;
         if (typeof req.body.personName === 'undefined') {
