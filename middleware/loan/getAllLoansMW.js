@@ -1,13 +1,12 @@
 /**
- * Fetches all the loans associated with the event on the
- * current page.
+ * Fetches all the loans
  */
 const requireOption = require('../requireOption');
 
 module.exports = function (objectrepository) {
     const LoanModel = requireOption(objectrepository, 'LoanModel');
     return function (req, res, next) {
-        return LoanModel.find({_event: req.params.eventid}, (err, loanList) => {
+        return LoanModel.find({}, (err, loanList) => {
             if (err) { return next(err); }
             loanList.forEach(loan => loan.loanerName
                 = res.locals.people
@@ -17,3 +16,4 @@ module.exports = function (objectrepository) {
         });
     };
 };
+ 

@@ -18,9 +18,9 @@
                             <input type="text" class="form-control" id="loanCost" name="loanCost">
                         </div>
                         <div class="form-group">
-                            <label for="loanPerson">Who financed this loan</label>
-                            <select class="form-control" id="loanPerson" name="loanPerson">
-                            <% people.forEach( (person) => { %>
+                            <label for="loanPersonName">Who financed this loan</label>
+                            <select class="form-control" id="loanPersonName" name="loanPersonName">
+                            <% insiders.forEach( (person) => { %>
                                 <option><%= person.name %></option>
                             <% }); %>
                             </select>

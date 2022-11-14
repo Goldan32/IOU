@@ -5,11 +5,15 @@
 const requireOption = require('../requireOption');
 
 module.exports = function (objectrepository) {
+    const LoanModel = requireOption(objectrepository, 'LoanModel');
     return function (req, res, next) {
         if (typeof res.locals.event === 'undefined') { return next(); }
-        res.locals.event.remove( err => {
+        LoanModel.deleteMany({_event: res.locals.event}, err => {
             if (err) { return next(err); }
-            return res.redirect('/event/list');
+            res.locals.event.remove( err => {
+                if (err) { return next(err); }
+                return res.redirect('/event/list');
+            });
         });
     };
 };

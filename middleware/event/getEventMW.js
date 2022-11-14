@@ -9,7 +9,6 @@ module.exports = function (objectrepository) {
         return EventModel.findOne({_id: req.params.eventid}, (err, event) => {
             if (err) { return next(err); }
             event.attendance = event.attendees.length;
-
             res.locals.people = event.attendees;
             res.locals.event = event;
             return next();
