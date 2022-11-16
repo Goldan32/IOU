@@ -18,6 +18,7 @@ const renderMW = require("../middleware/renderMW");
 const getEventBalanceMW = require("../middleware/loan/getEventBalanceMW");
 const getOverallBalanceMW = require("../middleware/loan/getOverallBalanceMW");
 const getAllLoansMW = require("../middleware/loan/getAllLoansMW");
+const profileEventBalanceMW = require("../middleware/people/profileEventBalanceMW");
 
 const EventModel = require('../models/event');
 const PersonModel = require('../models/person');
@@ -70,7 +71,10 @@ module.exports = function(app) {
 
     app.use('/people/profile/:personid',
         getEventListMW(objRepo),
+        getPeopleMW(objRepo),
+        getAllLoansMW(objRepo),
         getPersonMW(objRepo),
+        profileEventBalanceMW(objRepo),
         renderMW(objRepo, 'profile')
     );
 
