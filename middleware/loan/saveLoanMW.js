@@ -7,14 +7,22 @@ const requireOption = require('../requireOption');
 module.exports = function (objectrepository) {
     const LoanModel = requireOption(objectrepository, 'LoanModel');
     const PersonModel = requireOption(objectrepository, 'PersonModel');
+
     return function (req, res, next) {
+        res.locals.allFieldsFilled = true;
         res.locals.loanIsNumber = true;
         if ((typeof res.locals.people === 'undefined') || (typeof res.locals.event === 'undefined')){
             return next(err);
         }
         if ((typeof req.body.loanName === 'undefined') 
+            && (typeof req.body.loanCost === 'undefined')
+            && (typeof req.body.loanPersonName === 'undefined')) {
+                return next();
+        }
+        if ((req.body.loanName === '') 
             || (typeof req.body.loanCost === 'undefined')
             || (typeof req.body.loanPersonName === 'undefined')) {
+                res.locals.allFieldsFilled = false;
                 return next();
         }
         parsedLoanCost = parseInt(req.body.loanCost)
