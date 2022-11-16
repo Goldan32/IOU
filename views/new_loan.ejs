@@ -31,5 +31,19 @@
                 </div>
                 <div class="col-2"></div>
             </div>
+            <% if (loanIsNumber === false) { %> 
+            <div class="row">
+                <div class="col-12">
+                    <p style="color: red">Loan amount must be a number</p>
+                </div>
+            </div>
+            <% } %>
+            <% if (allFieldsFilled === false) { %> 
+            <div class="row">
+                <div class="col-12">
+                    <p style="color: red">Please fill all the fields</p>
+                </div>
+            </div>
+            <% } %> 
         </div>
 <%- include('footer') -%>
