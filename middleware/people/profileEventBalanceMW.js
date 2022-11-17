@@ -13,7 +13,7 @@ module.exports = function (objectrepository) {
                     ? l.amount - (l.amount/(pe.attendees.length))
                     : -(l.amount/(pe.attendees.length)))
                     .reduce((sum, current) => sum + current, 0);
-            });
+            }).clone();
         }
         return next();
     };
