@@ -8,9 +8,11 @@ module.exports = function (objectrepository) {
         return PersonModel.findOne({_id: req.params.personid}, (err, person) => {
             if (err) { return next(err); }
             res.locals.person = person;
-            res.locals.personEventList = res.locals.eventList.filter(e => 
-                e.attendees.map(n => n.toString()).includes(person._id.toString())
-            );
+            if (typeof res.locals.eventList !== 'undefined') {
+                    res.locals.personEventList = res.locals.eventList.filter(e =>
+                    e.attendees.map(n => n.toString()).includes(person._id.toString())
+                );
+            }
             return next();
         });
     };
